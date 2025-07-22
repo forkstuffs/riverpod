@@ -20,8 +20,10 @@ dependencies:
   meta: ^1.15.0
   mockito: ^5.4.4
   path: ^1.8.0
-  riverpod_analyzer_utils: 1.0.0-dev.3
-  riverpod_annotation: 3.0.0-dev.16
+  riverpod_analyzer_utils:
+    path: ../riverpod_analyzer_utils
+  riverpod_annotation:
+    path: ../riverpod_annotation
   source_gen: ^3.0.0
 
 dev_dependencies:
@@ -30,5 +32,6 @@ dev_dependencies:
   freezed: ^3.1.0
   freezed_annotation: ^3.0.0
   package_config: ^2.2.0
-  riverpod: 3.0.0-dev.16
+  riverpod:
+    path: ../riverpod
   test: ^1.21.0
