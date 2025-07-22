@@ -4,6 +4,7 @@ import 'package:analyzer/dart/analysis/results.dart';
 import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer/dart/ast/visitor.dart';
 import 'package:analyzer/dart/element/element.dart';
+import 'package:analyzer/dart/element/element2.dart';
 import 'package:analyzer/diagnostic/diagnostic.dart';
 import 'package:build/build.dart';
 import 'package:build_test/build_test.dart';
@@ -86,7 +87,7 @@ void testSource(
       ) async {
         final lib = await resolver.findLibraryByName('foo');
 
-        final ast = await lib!.session.getResolvedLibrary(lib.source.fullName);
+        final ast = await lib!.session.getResolvedLibrary(lib.firstFragment.source.fullName);
         ast as ResolvedLibraryResult;
 
         return (
@@ -243,7 +244,7 @@ extension ResolverX on Resolver {
       ignoreErrors: ignoreErrors,
     );
     final libraryAst =
-        await library.session.getResolvedLibraryByElement(library);
+        await library.session.getResolvedLibraryByElement2(library);
     libraryAst as ResolvedLibraryResult;
 
     final result = RiverpodAnalysisResult();
@@ -277,7 +278,7 @@ extension ResolverX on Resolver {
     return result;
   }
 
-  Future<LibraryElement> requireFindLibraryByName(
+  Future<LibraryElement2> requireFindLibraryByName(
     String libraryName, {
     required bool ignoreErrors,
   }) async {
