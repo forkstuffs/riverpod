@@ -77,7 +77,6 @@ class RiverpodGenerator extends ParserGenerator<Riverpod> {
     for (final error in errors) {
       throw RiverpodInvalidGenerationSourceError(
         error.message,
-        element: error.targetElement,
         astNode: error.targetNode,
       );
     }
