@@ -1,6 +1,5 @@
 import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer/dart/element/element.dart';
-import 'package:analyzer/dart/element/element2.dart';
 
 typedef RiverpodErrorReporter = void Function(RiverpodAnalysisError);
 
@@ -33,7 +32,7 @@ class RiverpodAnalysisError {
 
   final String message;
   final AstNode? targetNode;
-  final Element2? targetElement;
+  final Element? targetElement;
   final RiverpodAnalysisErrorCode? code;
 
   @override
