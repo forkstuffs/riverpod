@@ -45,7 +45,6 @@ class JsonGenerator extends ParserGenerator<JsonPersist> {
     if (provider.node.typeParameters?.typeParameters.isNotEmpty ?? false) {
       throw InvalidGenerationSourceError(
         'Encoding generic notifiers is currently not supported',
-        element: provider.node.declaredElement,
         node: provider.node,
       );
     }
